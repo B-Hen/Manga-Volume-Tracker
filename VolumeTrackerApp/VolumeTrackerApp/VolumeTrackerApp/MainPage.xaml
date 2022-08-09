@@ -16,7 +16,24 @@
         <CollectionView ItemsSource="{Binding Data}">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <Label Text="{Binding .}"/>
+                    <Grid Padding="10">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <Image Grid.RowSpan="2"
+                               Source="{Binding imageURL}"
+                               Aspect="AspectFill"
+                               HeightRequest="157"
+                               WidthRequest="100"/>
+                        <Label Grid.Column="1"
+                               Text="{Binding title}"
+                               FontAttributes="Bold"/>
+                    </Grid>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
