@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using GraphQL.Client.Http;
 using GraphQL.Client.Abstractions.Websocket;
 using GraphQL.Client.Serializer.Newtonsoft;
+using VolumeTrackerApp.Pages;
 
 namespace VolumeTrackerApp.ViewModels
 {
@@ -19,6 +20,15 @@ class MainPageViewModel
 
         //commands
         public ICommand SearchCommand { get; set; }
+        public ICommand SelectedCommand { get; set; }
+
+        //properties
+        private MangaObject selectedManga;
+        public MangaObject SelectedManga
+        {
+            get { return selectedManga; }
+            set { selectedManga = value; }
+        }
 
         //constructor
         public MainPageViewModel()
@@ -28,6 +38,10 @@ class MainPageViewModel
             SearchCommand = new Command<string>(async(search) => 
             {
                 await GetAnilistData(search);
+            });
+
+            SelectedCommand = new Command<MangaObject>(async(mangaObject) => {
+                await Application.Current.MainPage.Navigation.PushAsync(new SelectedPage(mangaObject));
             });
         }
 
@@ -46,7 +60,7 @@ class MainPageViewModel
                              hasNextPage,
                              perPage,
                            }
-                           media (id: $id, search: """ + search + @""", type: MANGA) {
+                           media (id: $id, search: """ + search + @""", type: MANGA, isAdult: false) {
                              id,
                                        title {
                                            romaji

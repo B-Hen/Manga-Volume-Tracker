@@ -1,16 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Xamarin.Forms;
 
-namespace VolumeTrackerApp
+using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
+
+namespace VolumeTrackerApp.Pages
 {
-    public partial class MainPage : TabbedPage
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class SearchPage : ContentPage
     {
-        public MainPage()
+        public SearchPage()
         {
             InitializeComponent();
         }

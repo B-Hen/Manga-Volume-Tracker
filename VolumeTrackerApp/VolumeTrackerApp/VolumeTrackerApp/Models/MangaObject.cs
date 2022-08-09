@@ -4,7 +4,7 @@ using System.Text;
 
 namespace VolumeTrackerApp.Models
 {
-    class MangaObject
+    public class MangaObject
     {
         public string title { get; set; }
 
