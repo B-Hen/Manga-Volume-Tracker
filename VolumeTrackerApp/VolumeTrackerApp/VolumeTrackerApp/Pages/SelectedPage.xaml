@@ -9,14 +9,26 @@
     
     <ContentPage.Content>
         <StackLayout>
-            <Label x:Name="MangaTitle"
-                VerticalOptions="Center" 
-                HorizontalOptions="Center" />
-            <Image x:Name="MangaImage"
-                   VerticalOptions="Center"
-                   HorizontalOptions="Center"
-                   WidthRequest="100"
-                   HeightRequest="157"/>
+            <Grid Padding="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Image x:Name="MangaImage" Grid.RowSpan="2"
+                               Aspect="AspectFill"
+                               HeightRequest="157"
+                               WidthRequest="100"/>
+                <Label x:Name="MangaTitle" Grid.Column="1"                             
+                               FontAttributes="Bold"
+                               FontSize="Medium"/>
+            </Grid>
+            <Label TextType="Html" x:Name="MangaDescription"/>
+            <Button Text="Add to Collecting"
+                    VerticalOptions="EndAndExpand"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

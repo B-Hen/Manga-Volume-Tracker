@@ -17,6 +17,7 @@ namespace VolumeTrackerApp.Pages
             InitializeComponent();
             MangaTitle.Text = selectedManga.title;
             MangaImage.Source = selectedManga.imageURL;
+            MangaDescription.Text = selectedManga.description;
         }
     }
 }

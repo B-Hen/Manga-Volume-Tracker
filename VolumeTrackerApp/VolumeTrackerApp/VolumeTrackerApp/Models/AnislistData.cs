@@ -33,6 +33,7 @@ namespace VolumeTrackerApp.Models
     public class Media
     {
         public int id { get; set; }
+        public string description { get; set; }
         public Title title { get; set; }
         public int? volumes { get; set; }
         public Coverimage coverImage { get; set; }

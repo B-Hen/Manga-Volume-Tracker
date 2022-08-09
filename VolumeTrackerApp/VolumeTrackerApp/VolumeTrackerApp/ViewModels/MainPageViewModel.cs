@@ -61,7 +61,7 @@ class MainPageViewModel
                              perPage,
                            }
                            media (id: $id, search: """ + search + @""", type: MANGA, isAdult: false) {
-                             id,
+                             id, description,
                                        title {
                                            romaji
                                english
@@ -85,17 +85,17 @@ class MainPageViewModel
             {
                 if(media.title.english != null)
                 {
-                    Data.Add(new MangaObject {title = media.title.english, imageURL = media.coverImage.medium });
+                    Data.Add(new MangaObject {title = media.title.english, imageURL = media.coverImage.medium, description = media.description});
                 }
                 else if(media.title.english == null)
                 {
                     if(media.title.romaji != null)
                     {
-                        Data.Add(new MangaObject { title = media.title.romaji, imageURL = media.coverImage.medium });
+                        Data.Add(new MangaObject { title = media.title.romaji, imageURL = media.coverImage.medium, description = media.description });
                     }
                     else
                     {
-                        Data.Add(new MangaObject { title = media.title.native, imageURL = media.coverImage.medium });
+                        Data.Add(new MangaObject { title = media.title.native, imageURL = media.coverImage.medium, description = media.description });
                     }
                 }
             }
