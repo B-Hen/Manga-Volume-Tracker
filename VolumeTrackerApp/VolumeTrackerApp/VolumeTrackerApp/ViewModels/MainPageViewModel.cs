@@ -85,17 +85,17 @@ class MainPageViewModel
             {
                 if(media.title.english != null)
                 {
-                    Data.Add(new MangaObject {title = media.title.english, imageURL = media.coverImage.medium, description = media.description});
+                    Data.Add(new MangaObject { id = media.id, title = media.title.english, imageURL = media.coverImage.medium, description = media.description});
                 }
                 else if(media.title.english == null)
                 {
                     if(media.title.romaji != null)
                     {
-                        Data.Add(new MangaObject { title = media.title.romaji, imageURL = media.coverImage.medium, description = media.description });
+                        Data.Add(new MangaObject { id = media.id, title = media.title.romaji, imageURL = media.coverImage.medium, description = media.description });
                     }
                     else
                     {
-                        Data.Add(new MangaObject { title = media.title.native, imageURL = media.coverImage.medium, description = media.description });
+                        Data.Add(new MangaObject { id = media.id, title = media.title.native, imageURL = media.coverImage.medium, description = media.description });
                     }
                 }
             }

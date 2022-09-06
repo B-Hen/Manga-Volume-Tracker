@@ -28,7 +28,8 @@
             </Grid>
             <Label TextType="Html" x:Name="MangaDescription"/>
             <Button Text="Add to Collecting"
-                    VerticalOptions="EndAndExpand"/>
+                    VerticalOptions="EndAndExpand"
+                    Clicked="AddMangaToCollection"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

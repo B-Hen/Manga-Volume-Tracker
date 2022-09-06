@@ -16,5 +16,11 @@ namespace VolumeTrackerApp.Pages
         {
             InitializeComponent();
         }
+
+        protected override async void OnAppearing()
+        {
+            base.OnAppearing();
+            MangaCollection.ItemsSource = await App.MangaDatabase.GetMangaCollecting();
+        }
     }
 }
