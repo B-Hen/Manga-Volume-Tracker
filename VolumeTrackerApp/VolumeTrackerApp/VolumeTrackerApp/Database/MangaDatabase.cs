@@ -41,5 +41,10 @@ namespace VolumeTrackerApp.Database
 
             return false;
         }
+
+        public Task<int> DeleteManga(MangaObject manga)
+        {
+            return mangaDatabase.DeleteAsync(manga);
+        }
     }
 }

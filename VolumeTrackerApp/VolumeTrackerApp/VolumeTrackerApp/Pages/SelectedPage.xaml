@@ -27,7 +27,8 @@
                                FontSize="Medium"/>
             </Grid>
             <Label TextType="Html" x:Name="MangaDescription"/>
-            <Button Text="Add to Collecting"
+            <Button x:Name="AddRemoveButton"
+                    Text="Add to Collecting"
                     VerticalOptions="EndAndExpand"
                     Clicked="AddMangaToCollection"/>
         </StackLayout>
